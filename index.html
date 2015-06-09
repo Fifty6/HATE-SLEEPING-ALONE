@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title> fifty6 </title>
+		 
+		 <script src="three.min.js"></script>
+		 <meta name="viewport" content="width=device-width">
+		 <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<body id="featured">
+	</body>
+	<script>
+		var scene = new THREE.Scene();
+		var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 10000);
+		var renderer = new THREE.WebGLRenderer({alpha:true});
+		document.getElementById('featured').appendChild(renderer.domElement);
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.setClearColor( 0x000000, 0 );
+
+		var geometry1 = new THREE.BoxGeometry(5, 5, 0.05, 5, 5, 5);
+		// var feature1 = THREE.ImageUtils.loadTexture('1.png', {}, function(){},function(){});
+		var material1 = new THREE.MeshBasicMaterial({color: 0x000000, wireframe:true});
+		var cube1 = new THREE.Mesh(geometry1, material1);
+
+		var geometry2 = new THREE.BoxGeometry(5, 5, 0.05, 5, 5, 5);
+		// var feature1 = THREE.ImageUtils.loadTexture('1.png', {}, function(){},function(){});
+		var material2 = new THREE.MeshBasicMaterial({color: 0x000000, wireframe:true});
+		var cube2 = new THREE.Mesh(geometry2, material2);
+
+		var geometry3 = new THREE.BoxGeometry(5, 5, 0.05, 5, 5, 5);
+		// var feature1 = THREE.ImageUtils.loadTexture('1.png', {}, function(){},function(){});
+		var material3 = new THREE.MeshBasicMaterial({color: 0x000000, wireframe:true});
+		var cube3 = new THREE.Mesh(geometry3, material3);
+
+		scene.add(cube1);
+		scene.add(cube2);
+		scene.add(cube3);
+
+		camera.position.z = 5;
+		camera.position.x = -5;
+
+		cube1.position.z = -1;
+
+		cube1.rotation.y = 0.25;
+		cube2.rotation.y = 0.25;
+		cube3.rotation.y = 0.25;
+		function render() {
+			requestAnimationFrame(render);
+			renderer.render(scene, camera);
+		};
+		render();
+	</script>
+</html>
