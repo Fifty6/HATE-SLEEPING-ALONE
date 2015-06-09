@@ -92,15 +92,54 @@
 				cube4.position.x = -15;
 				cube4.position.y = -3;
 			}
+
+			if (cube1.position.z > -9 && cube1.position.z < 0){
+				if(cube1.material.opacity <= 0.5){
+					cube1.material.opacity += 0.01;
+				}
+			}
+
+			if (cube2.position.z > -9 && cube2.position.z < 0){
+				if(cube2.material.opacity <= 0.5){
+					cube2.material.opacity += 0.01;
+				}
+			}
+
+			if (cube3.position.z > -9 && cube3.position.z < 0){
+				if(cube3.material.opacity <= 0.5){
+					cube3.material.opacity += 0.01;
+				}
+			}
+
+			if (cube4.position.z > -9 && cube4.position.z < 0){
+				if(cube4.material.opacity <= 0.5){
+					cube4.material.opacity += 0.01;
+				}
+			}
+
+			if (cube1.position.z > 1){
+				cube1.material.opacity -= 0.01;
+			}
+			if (cube2.position.z > 1){
+				cube2.material.opacity -= 0.01;
+			}
+			if (cube3.position.z > 1){
+				cube3.material.opacity -= 0.01;
+			}
+			if (cube4.position.z > 1){
+				cube4.material.opacity -= 0.01;
+			}
+			
+
 			cube1.position.z += 0.03;
 			cube2.position.z += 0.03;
 			cube3.position.z += 0.03;
 			cube4.position.z += 0.03;
 
-			cube1.position.x += 0.04;
-			cube2.position.x += 0.04;
-			cube3.position.x += 0.04;
-			cube4.position.x += 0.04;
+			cube1.position.x += 0.05;
+			cube2.position.x += 0.05;
+			cube3.position.x += 0.05;
+			cube4.position.x += 0.05;
 
 			cube1.position.y += 0.01;
 			cube2.position.y += 0.01;
