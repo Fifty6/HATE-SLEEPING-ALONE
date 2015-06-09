@@ -1,46 +1,29 @@
-<html>
-	<head>
-		<title> fifty6 </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="/favicon.ico">
-        <link rel="stylesheet" href="stylesheets/css/56.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="scripts/three.min.js"></script>
-        <script src="scripts/three6.js"></script>
-	</head>
-    <body>
-	    <div id="featured">
-	    </div>
-	</body>
-	<script>
-		var scene = new THREE.Scene();
+var scene = new THREE.Scene();
 		var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 10000);
 		var renderer = new THREE.WebGLRenderer({alpha:true});
 		document.getElementById('featured').appendChild(renderer.domElement);
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setClearColor( 0x000000, 0 );
 
-		var geometry1 = new THREE.BoxGeometry(13, 9, 0, 10, 10, 10);
-		var feature1 = THREE.ImageUtils.loadTexture('assets/three-assets/kid.png', {}, function(){},function(){});
-		var material1 = new THREE.MeshBasicMaterial({map: feature1, transparent: true, opacity: 0.5, color: 0xFF0000});
-        // ultra hard var material1 = new THREE.MeshBasicMaterial({map: feature1, transparent: true, opacity: 0.5, color: 0xFF0000});
+		var geometry1 = new THREE.BoxGeometry(16, 9, 0.05, 10, 10, 10);
+		var feature1 = THREE.ImageUtils.loadTexture('three-assets/kid.png', {}, function(){},function(){});
+		var material1 = new THREE.MeshBasicMaterial({map: feature1});
 		var cube1 = new THREE.Mesh(geometry1, material1);
 
-		var geometry2 = new THREE.BoxGeometry(13, 9, 0, 10, 10, 10);
-		var feature2 = THREE.ImageUtils.loadTexture('assets/three-assets/88.png', {}, function(){},function(){});
-		var material2 = new THREE.MeshBasicMaterial({map: feature2, transparent: true, opacity: 0.5, color: 0xFF0000});
+		var geometry2 = new THREE.BoxGeometry(16, 9, 0.05, 10, 10, 10);
+		var feature2 = THREE.ImageUtils.loadTexture('three-assets/88.png', {}, function(){},function(){});
+		var material2 = new THREE.MeshBasicMaterial({map: feature2});
 		var cube2 = new THREE.Mesh(geometry2, material2);
 
-		var geometry3 = new THREE.BoxGeometry(13, 9, 0, 10, 10, 10);
-		var feature3 = THREE.ImageUtils.loadTexture('assets/three-assets/aa.png', {}, function(){},function(){});
-		var material3 = new THREE.MeshBasicMaterial({map: feature3, transparent: true, opacity: 0.5, color: 0xFF0000});
+		var geometry3 = new THREE.BoxGeometry(16, 9, 0.05, 10, 10, 10);
+		var feature3 = THREE.ImageUtils.loadTexture('three-assets/aa.png', {}, function(){},function(){});
+		var material3 = new THREE.MeshBasicMaterial({map: feature3});
 		var cube3 = new THREE.Mesh(geometry3, material3);
 
-		var geometry4 = new THREE.BoxGeometry(13, 9, 0, 10, 10, 10);
-		var feature4 = THREE.ImageUtils.loadTexture('assets/three-assets/willis.png', {}, function(){},function(){});
-		var material4 = new THREE.MeshBasicMaterial({map: feature4, transparent: true, opacity: 0.5, color: 0xFF0000});
-		var cube4 = new THREE.Mesh(geometry4, material4);
+		var geometry4 = new THREE.BoxGeometry(16, 9, 0.05, 10, 10, 10);
+		var feature4 = THREE.ImageUtils.loadTexture('three-assets/willis.png', {}, function(){},function(){});
+		var material4 = new THREE.MeshBasicMaterial({map: feature4});
+		var cube4 = new THREE.Mesh(geometry3, material3);
 
 		scene.add(cube1);
 		scene.add(cube2);
@@ -109,5 +92,3 @@
 			renderer.render(scene, camera);
 		};
 		render();
-	</script>
-</html>
